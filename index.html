@@ -2,10 +2,112 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="dep/normalize.css/normalize.css"/>
-    <link rel="stylesheet" type="text/css" href="dep/fontawesome-free/css/all.css"/>
-<!--    <link rel="stylesheet" type="text/css" href="dep/fontawesome-free/css/brands.css"/>-->
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>Sergei Kokovin - Rust Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Основные настройки шрифта и цвета */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        /* Контейнер для всего резюме - центрируем и ограничиваем ширину */
+        #inner {
+            background-color: #fff;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex; /* Включаем гибкую верстку */
+            flex-wrap: wrap; /* Разрешаем перенос на мобильных */
+            gap: 40px; /* Отступ между колонками */
+        }
+
+        /* Левая (основная) колонка */
+        #main {
+            flex: 1; /* Занимает все свободное место */
+            min-width: 300px;
+        }
+
+        /* Правая колонка (сайдбар) */
+        #sidebar {
+            width: 240px; /* Фиксированная ширина */
+            flex-shrink: 0; /* Не сжимать */
+            border-left: 1px solid #eee;
+            padding-left: 20px;
+        }
+
+        /* Стили заголовков */
+        h1 { margin-top: 0; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { border-bottom: 2px solid #ddd; padding-bottom: 5px; color: #555; margin-top: 30px; }
+        h3 { margin-bottom: 5px; color: #000; }
+
+        .subtitle { font-size: 1.2em; color: #666; display: block; margin-bottom: 30px; }
+
+        /* Блоки опыта */
+        .blocks {
+            display: flex;
+            margin-bottom: 25px;
+        }
+
+        .date {
+            width: 60px;
+            font-size: 0.85em;
+            color: #888;
+            text-align: right;
+            padding-right: 15px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Декоративная линия (точки) */
+        .decorator {
+            width: 2px;
+            background-color: #ddd;
+            margin-right: 15px;
+            position: relative;
+        }
+        .decorator::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: -4px;
+            width: 10px;
+            height: 10px;
+            background: #888;
+            border-radius: 50%;
+        }
+
+        .details { flex: 1; }
+        .place { font-weight: bold; color: #444; }
+        .location { float: right; color: #888; font-size: 0.9em; }
+
+        /* Списки */
+        ul { padding-left: 20px; margin-top: 5px; }
+        li { margin-bottom: 5px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Стили сайдбара */
+        .side-block { margin-bottom: 30px; }
+        .side-block h1 { font-size: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .side-block ul { list-style: none; padding: 0; }
+        .side-block li { margin-bottom: 10px; display: flex; align-items: center; }
+        .side-block i { width: 25px; color: #555; text-align: center; margin-right: 10px; }
+
+        /* Адаптивность для телефонов */
+        @media (max-width: 768px) {
+            #inner { flex-direction: column; padding: 20px; }
+            #sidebar { width: 100%; border-left: none; padding-left: 0; border-top: 1px solid #eee; padding-top: 20px; }
+            .location { float: none; display: block; }
+        }
+    </style>
 </head>
 <body lang="en">
 
@@ -18,242 +120,158 @@
 
         <section class="main-block">
             <h2>
-                <i class="fa fa-suitcase"></i> Experiences
+                <i class="fa fa-suitcase"></i> Experience
             </h2>
+            <section class="blocks">
+                <div class="date">
+                    <span>2025</span><span>present</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>Solana Mainnet Validator & Network Optimization</h3>
+                        <span class="place">High-performance Node Engineering</span>
+                        <span class="location">Remote</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Deployed and managed high-performance Solana Mainnet-Beta validators using Agave client.</li>
+                            <li>Engineered Linux kernel network stack optimizations (UDP buffers, TCP backlog, sysctl tuning) to maximize transaction throughput and Turbine gossip protocol efficiency.</li>
+                            <li>Implemented automated snapshot recovery pipelines and monitoring for high availability.</li>
+                            <li><strong>Stack:</strong> Rust, Solana CLI, Linux Systems Engineering, Bash.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             <section class="blocks">
                 <div class="date">
                     <span>2023</span><span>present</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Rust Developer</h3>
                         <span class="place">Cansa Macina</span>
-                        <span class="location">(remote)</span>
+                        <span class="location"><i class="fas fa-laptop-house"></i> (Remote)</span>
                     </header>
                     <div>
                         <ul>
-                            <li>Developing multipurpose software for pipe bending machines. Creating a CNC program for
-                                the machine requires a
-                                pipeline. Typically, a 3D model of a pipe is provided by the customer in the STEP file
-                                format. STEP, which adheres
-                                to the ISO 10303-21 standard, can contain a wide variety of geometric data structures.
-                                The primary challenge is
-                                recognizing these data structures to accurately extract pipeline information.
+                            <li>Engineered high-performance CNC software for pipe bending machines using Rust.
+                                The core challenge involved developing a parsing pipeline to accurately extract strict
+                                pipeline data from customer-provided STEP files (ISO 10303-21 standard).
                             </li>
-                            <li>Rust + Angular</li>
-                            <li>Rust: Wgpu, Winit as render layer; Egui as UI overlay; Truck as geometry kernel</li>
-                            <li>Angular as web UI for WASM.</li>
-                            <li><a href="https://github.com/skokovin/freetubepc" target="_blank">GitHub</a></li>
+                            <li><strong>Stack:</strong> Rust + Angular</li>
+                            <li><strong>Rust ecosystem:</strong> Wgpu & Winit (render layer), Egui (UI overlay), Truck (geometry kernel).</li>
+                            <li><strong>Frontend:</strong> Angular as Web UI for WASM modules.</li>
+                            <li><a href="https://github.com/skokovin/freetubepc" target="_blank">GitHub Repository</a></li>
                         </ul>
                     </div>
                 </div>
             </section>
+
             <section class="blocks">
                 <div class="date">
                     <span>2013</span><span>2022</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Senior Java/Scala Developer, IT Architect</h3>
                         <span class="place">Nautic</span>
-                        <span class="location">Saint Petersburg</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Saint Petersburg</span>
                     </header>
                     <div>
                         <ul>
-                            <li>Developing a local shipbuilding ERP system that integrates FORAN, a CAD/CAE/CAM software
-                                with comprehensive
-                                3D attributive database models, files, and documents. By adopting Industry 4.0
-                                principles, this ERP system ensures
-                                that data is shared from a single source, enabling seamless collaboration across the
-                                entire company and providing
-                                all customers with access to a unified platform.
-                            </li>
-                            <li>Scala/Akka</li>
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-                            <li>C#, C++, Microsoft COM. Create plugin for AutoCAD to pass geometry and attributes data
-                                from another program
-                            </li>
-                            <li>RUST for CNC and WASM.</li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=Lr_HVg8wFMw&list=PLO-vCwLkKfbRW4iCKHRTAGxFy7eN3wx9i"
-                                   target="_blank">YouTube video playlist with demonstration</a></li>
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=BCaR0gMAimE&list=PLO-vCwLkKfbTghKJv3Q9mBNo0e_V6Bnzi"
-                                   target="_blank">YouTube video playlist with demonstration</a></li>
+                            <li>Architected a shipbuilding ERP system integrating FORAN (CAD/CAE/CAM) with 3D attributive database models.</li>
+                            <li>Implemented Industry 4.0 principles to create a "Single Source of Truth" platform.</li>
+                            <li>Developed AutoCAD plugins (C#, C++, Microsoft COM) for data bridging.</li>
+                            <li><strong>Stack:</strong> Scala/Akka, PostgreSQL, MongoDB.</li>
+                            <li><strong>Rust:</strong> Used for CNC and WASM modules.</li>
+                            <li><a href="#" target="_blank">YouTube Demo Playlist I</a></li>
+                            <li><a href="#" target="_blank">YouTube Demo Playlist II</a></li>
                         </ul>
                     </div>
                 </div>
             </section>
+
             <section class="blocks">
                 <div class="date">
                     <span>2011</span><span>2012</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Java/Scala Developer</h3>
                         <span class="place">Telda</span>
-                        <span class="location"> Saint Petersburg</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Saint Petersburg</span>
                     </header>
                     <div>
                         <ul>
-                            <li>Migrating an old Fire Service system from C++ to Scala/AngularJS, and the database from
-                                Oracle to PostgreSQL.
-                                This project has provided me with extensive experience in PostGIS and PgRouting.
-                                Additionally, I am leveraging
-                                OpenStreetMap's data, indexed with PostGIS, to create efficient street-routing systems
-                                for deploying the nearest
-                                fire engines to emergencies.
-                            </li>
-                            <li>Scala, Java, Akka</li>
-                            <li>PostgreSQL, PostGis, PgRoute</li>
-                            <li>AngularJS</li>
+                            <li>Led the migration of a legacy Fire Service system from C++ to Scala/AngularJS and Oracle to PostgreSQL.</li>
+                            <li>Built efficient emergency routing systems using PostGIS and PgRouting.</li>
+                            <li><strong>Stack:</strong> Scala, Java, Akka, PostgreSQL (PostGIS), AngularJS.</li>
                         </ul>
                     </div>
                 </div>
             </section>
+
             <section class="blocks">
                 <div class="date">
-                    <span>2017</span><span>2011</span>
+                    <span>2007</span><span>2011</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Regional Technical Supervisor | C# Developer</h3>
                         <span class="place">Sener</span>
-                        <span class="location">Saint Petersburg</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Saint Petersburg</span>
                     </header>
                     <div>
                         <ul>
-                            <li>FORAN is a CAD/CAE/CAM software used for designing ships and marine vessels. It utilizes
-                                QT and OpenCascade
-                                for the client-side interface, while the back-end is supported by an Oracle database.
-                                The Oracle schema includes
-                                approximately 600 relational tables and around 300 PL/SQL procedures and functions,
-                                providing a robust
-                                foundation for creating custom extensions. I have effectively used C# and LINQ to
-                                develop a variety of custom
-                                reports for around 10 customers. Additionally, I have completed the Oracle DBA
-                                Administrator I and II courses to
-                                deepen my expertise. As my role evolved, I transitioned to Java for further development
-                                tasks.
-                            </li>
-                            <li>C#, LINQ, C++</li>
-                            <li>SQL, PL/SQL</li>
+                            <li>Customized FORAN software leveraging Oracle backend (~600 tables, ~300 PL/SQL procedures).</li>
+                            <li>Developed custom reporting tools using C# and LINQ.</li>
+                            <li>Certified Oracle DBA I & II.</li>
+                            <li><strong>Stack:</strong> C#, LINQ, C++, SQL, PL/SQL.</li>
                         </ul>
                     </div>
                 </div>
             </section>
         </section>
 
-        <section class="main-block concise">
-            <h2>
-                <i class="fa fa-graduation-cap"></i> Education
-            </h2>
+        <section class="main-block">
+            <h2><i class="fa fa-graduation-cap"></i> Education</h2>
             <section class="blocks">
                 <div class="date">
                     <span>1999</span><span>2005</span>
                 </div>
-                <div class="decorator">
-                </div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
                         <h3>Bachelor of Computer Application</h3>
                         <span class="place">Saint Petersburg State Marine Technical University</span>
-                        <span class="location">Saint Petersburg</span>
                     </header>
-                    <div>Bachelor of Computer Application • Faculty of Natural Sciences</div>
+                    <div>Faculty of Natural Sciences</div>
                 </div>
             </section>
         </section>
 
-        <section class="main-block concise">
-            <h2>
-                <i class="fa fa-solid fa-flask"></i> My Projects / Experiments
-            </h2>
+        <section class="main-block">
+            <h2><i class="fa fa-flask"></i> My Projects / Experiments</h2>
             <section class="blocks">
-                <div class="date">
-                    <span>2023</span><span>2023</span>
-                </div>
-                <div class="decorator">
-                </div>
+                <div class="date"><span>2023</span></div>
+                <div class="decorator"></div>
                 <div class="details">
                     <header>
-                        <h3>WGPU on Chrome I</h3>
-                        <span class="place">Loading more 4GB (around 10GB) of 3D unique meshes | Pack 3D meshes algorithms</span>
-                        <span class="location">istanbul</span>
+                        <h3>WebGPU High-Performance Rendering</h3>
+                        <span class="place">Istanbul</span>
                     </header>
                     <div>
                         <ul>
-                            <li>Chrome supports WebGPU API, let’s start test it.</li>
-                            <li>Pure RUST; WGPU; WINIT;</li>
-                            <li><a href="https://www.youtube.com/watch?v=E0fKqEAThts" target="_blank">YouTube Demo
-                                Video</a></li>
-                            <li><a href="https://github.com/skokovin/putout" target="_blank">GitHub Rust</a></li>
-                            <li><a href="https://github.com/skokovin/shipui" target="_blank">GitHub UI (Angular +
-                                WASM)</a></li>
-                            <li><a href="https://viewer701-f462d.web.app/" target="_blank">Try web big (Chromium PC)</a>
-                            </li>
-                            <li><a href="https://viewer004-8db15.web.app/" target="_blank">Try web medium (Chromium
-                                PC)</a></li>
-                            <li><a href="https://viewer002-d9e5b.web.app/" target="_blank">Try web small (Chromium
-                                PC)</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2023</span><span>2023</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>WGPU on Chrome II</h3>
-                        <span class="place">Connect Angular bidirectional UI to WASM</span>
-                        <span class="location">istanbul</span>
-                    </header>
-                    <div>
-                        <ul>
-                            <li>Chrome supports WebGPU API, let’s start test it.</li>
-                            <li>Pure RUST; WGPU; WINIT;</li>
-                            <li><a href="https://www.youtube.com/watch?v=q-vL2nk0cL8" target="_blank">YouTube Demo
-                                Video</a></li>
-                            <li><a href="https://github.com/skokovin/freetubew" target="_blank">GitHub Rust</a></li>
-                            <li><a href="https://github.com/skokovin/freetubeweb" target="_blank">GitHub UI (Angular +
-                                WASM)</a></li>
-                            <li><a href="https://bend-extractor.web.app/" target="_blank">Try web I (Chromium PC)</a>
-                            </li>
-                            <li><a href="https://bend-extractor.netlify.app/" target="_blank">Try web II (Chromium
-                                PC)</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2015</span><span>2020</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Some Angular APPS available online</h3>
-                        <span class="place">Playing eith Angular</span>
-                        <span class="location">Saint Petersburg</span>
-                    </header>
-                    <div>
-                        <ul>
-                            <li><a href="https://order958-c597c.web.app/" target="_blank">Calculations</a></li>
-                            <li><a href="https://demo1-a6234.web.app/" target="_blank">Sensors</a></li>
+                            <li>Exploring WebGPU API capabilities in Chrome using pure Rust (WGPU, WINIT).</li>
+                            <li>Rendering 10GB+ of unique 3D meshes with custom packing algorithms.</li>
+                            <li><a href="https://github.com/skokovin/putout" target="_blank">GitHub Rust</a> | <a href="https://viewer701-f462d.web.app/" target="_blank">Live Demo</a></li>
                         </ul>
                     </div>
                 </div>
@@ -261,42 +279,50 @@
         </section>
 
     </section>
+
     <aside id="sidebar">
         <div class="side-block" id="contact">
-            <h1>
-                Contact Info
-            </h1>
+            <h1>Contact Info</h1>
             <ul>
                 <li>
                     <i class="fab fa-telegram"></i>
                     <a href="https://t.me/no_sophistry" target="_blank">@no_sophistry</a>
                 </li>
-                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sergey-kokovin-61a81226/"
-                                                       target="_blank">Sergey Kokovin</a></li>
-                <li><i class="fa fa-envelope"></i> s.kokovin@gmail.com</li>
-                <li><i class="fab fa-whatsapp"></i> +905363376317</li>
-                <li><i class="fab fa-github"></i><a href="https://github.com/skokovin" target="_blank"> skokovin</a>
+                <li>
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/sergey-kokovin-61a81226/" target="_blank">LinkedIn Profile</a>
                 </li>
-
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:s.kokovin@gmail.com">s.kokovin@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+90 536 337 63 17</span>
+                </li>
+                <li>
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/skokovin" target="_blank">skokovin</a>
+                </li>
             </ul>
         </div>
-        <!--<div class="side-block" id="skills">
-            <h1>
-                Skills
-            </h1>
+
+        <div class="side-block" id="skills">
+            <h1>Skills</h1>
             <ul>
-                <li>Omnipresence</li>
-                <li>Anonymity</li>
+                <li><strong>Core:</strong> Rust, Scala, Java, C#</li>
+                <li><strong>Graphics:</strong> WGPU, Truck, OpenCascade</li>
+                <li><strong>Web:</strong> Angular, WASM, Axum</li>
+                <li><strong>Data:</strong> PostgreSQL, PostGIS, Oracle</li>
+                <li><strong>Domain:</strong> CAD/CAM, CNC, Shipbuilding</li>
             </ul>
-            <ul>
-                <li>Ordinarity</li>
-                <li>No name rights</li>
-            </ul>
-        </div>-->
-        <div class="side-block" id="disclaimer">
-            This r&eacute;sum&eacute; was wholly typeset with HTML/CSS &mdash; see <code>git.io/vVSYL</code>
+        </div>
+
+        <div class="side-block" id="disclaimer" style="font-size: 0.8em; color: #999; margin-top: 50px;">
+            Typeset with HTML/CSS
         </div>
     </aside>
 </div>
+
 </body>
 </html>
