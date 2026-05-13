@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* Основные настройки шрифта и цвета */
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
@@ -16,40 +16,40 @@
             line-height: 1.5;
         }
 
-        /* Контейнер для всего резюме - центрируем и ограничиваем ширину */
+
         #inner {
             background-color: #fff;
             max-width: 960px;
             margin: 0 auto;
             padding: 40px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: flex; /* Включаем гибкую верстку */
-            flex-wrap: wrap; /* Разрешаем перенос на мобильных */
-            gap: 40px; /* Отступ между колонками */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
         }
 
-        /* Левая (основная) колонка */
+
         #main {
-            flex: 1; /* Занимает все свободное место */
+            flex: 1;
             min-width: 300px;
         }
 
-        /* Правая колонка (сайдбар) */
+
         #sidebar {
-            width: 240px; /* Фиксированная ширина */
-            flex-shrink: 0; /* Не сжимать */
+            width: 240px;
+            flex-shrink: 0;
             border-left: 1px solid #eee;
             padding-left: 20px;
         }
 
-        /* Стили заголовков */
+
         h1 { margin-top: 0; text-transform: uppercase; letter-spacing: 1px; }
         h2 { border-bottom: 2px solid #ddd; padding-bottom: 5px; color: #555; margin-top: 30px; }
         h3 { margin-bottom: 5px; color: #000; }
 
         .subtitle { font-size: 1.2em; color: #666; display: block; margin-bottom: 30px; }
 
-        /* Блоки опыта */
+
         .blocks {
             display: flex;
             margin-bottom: 25px;
@@ -66,7 +66,7 @@
             flex-direction: column;
         }
 
-        /* Декоративная линия (точки) */
+
         .decorator {
             width: 2px;
             background-color: #ddd;
@@ -88,24 +88,35 @@
         .place { font-weight: bold; color: #444; }
         .location { float: right; color: #888; font-size: 0.9em; }
 
-        /* Списки */
+
         ul { padding-left: 20px; margin-top: 5px; }
         li { margin-bottom: 5px; }
         a { color: #0066cc; text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Стили сайдбара */
+
         .side-block { margin-bottom: 30px; }
         .side-block h1 { font-size: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 5px; }
         .side-block ul { list-style: none; padding: 0; }
         .side-block li { margin-bottom: 10px; display: flex; align-items: center; }
         .side-block i { width: 25px; color: #555; text-align: center; margin-right: 10px; }
 
-        /* Адаптивность для телефонов */
+
         @media (max-width: 768px) {
             #inner { flex-direction: column; padding: 20px; }
             #sidebar { width: 100%; border-left: none; padding-left: 0; border-top: 1px solid #eee; padding-top: 20px; }
             .location { float: none; display: block; }
+        }
+
+        #skills li {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+
+        #skills li strong {
+            display: block;
+            margin-bottom: 4px;
         }
     </style>
 </head>
@@ -122,8 +133,30 @@
             <h2>
                 <i class="fa fa-suitcase"></i> Experience
             </h2>
-
             <section class="blocks">
+                <div class="date">
+                    <span>2007</span><span>2026</span>
+                </div>
+                <div class="decorator">
+                </div>
+                <div class="details">
+                    <header>
+                        <h3>IT Director & Lead CAD/CAM Software Engineer</h3>
+                        <span class="place">Nautic-Rus</span>
+                        <span class="location">Saint Petersburg / Turkey</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li><strong>Shipyard Digitalization:</strong> Led the digital transformation of the marine design bureau, successfully bridging the gap between 3D naval architecture and physical shipyard manufacturing to create a seamless digital thread from initial hull design to CNC execution.</li>
+                            <li><strong>FORAN Customization:</strong> Architected custom modules and database scripts for the FORAN system, adapting it to the specific production capabilities and business chains of the shipyard.</li>
+                            <li><strong>CAD-to-CAM Automation:</strong> Fully digitized cutting shops with automated CNC code generation and labor time calculations[cite: 33]. Seamlessly integrated AutoCAD/GstarCAD into main systems via custom OpenCASCADE plugins.</li>
+                            <li><strong>Shop Floor Digitalization:</strong> Developed a paperless, touch-screen workstation for workers featuring real-time 3D spool rotation, zoom, and bending animations directly from the database.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+           <!-- <section class="blocks">
                 <div class="date">
                     <span>2026</span><span>present</span>
                 </div>
@@ -144,9 +177,9 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section>-->
 
-            <section class="blocks">
+           <!-- <section class="blocks">
                 <div class="date">
                     <span>2025</span><span>2026</span>
                 </div>
@@ -167,7 +200,7 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section>-->
 
             <section class="blocks">
                 <div class="date">
@@ -320,10 +353,10 @@
                     <i class="fa fa-envelope"></i>
                     <a href="mailto:s.kokovin@gmail.com">s.kokovin@gmail.com</a>
                 </li>
- <!--               <li>
+                <li>
                     <i class="fab fa-whatsapp"></i>
-                    <span>+90 536 337 63 17</span>
-                </li>-->
+                    <span>+7 911 2364731</span>
+                </li>
                 <li>
                     <i class="fab fa-github"></i>
                     <a href="https://github.com/skokovin" target="_blank">skokovin</a>
@@ -334,19 +367,13 @@
         <div class="side-block" id="skills">
             <h1>Skills</h1>
             <ul>
-                <li><strong>Core:</strong> Rust (Expert), Scala, Java</li>
-                <li><strong>Graphics:</strong> WGPU, Truck, OpenCascade</li>
+                <li><strong>Core:</strong> Rust (Expert), С++, Scala, Java, TypeScript</li>
+                <li><strong>Graphics:</strong> WGPU, Truck, OpenCascade, Bevy</li>
                 <li><strong>Web:</strong> Angular, WASM, Axum</li>
                 <li><strong>Data:</strong> PostgreSQL, PostGIS, Oracle, ClickHouse</li>
                 <li><strong>Domain:</strong> CAD/CAM, CNC, Shipbuilding</li>
-                <li><strong>Blockchain:</strong> Solana SDK, Anchor, SPL Token, Jito Bundles, BPF</li>
-                <li><strong>Oracles:</strong> Pyth Network, Switchboard (Pull/Push)</li>
-                <li><strong>Domain:</strong> DeFi, MEV, CAD/CAM, Systems Engineering</li>
+                <li><strong>Domain:</strong>CAD/CAM, Systems Engineering, Reverse Engineering, Integration</li>
             </ul>
-        </div>
-
-        <div class="side-block" id="disclaimer" style="font-size: 0.8em; color: #999; margin-top: 50px;">
-            Typeset with HTML/CSS
         </div>
     </aside>
 </div>

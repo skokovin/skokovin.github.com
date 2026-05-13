@@ -372,3 +372,16 @@ li{
   font-weight: 400;
   font-style: normal;
 }
+
+
+
+#skills li {
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+#skills li strong {
+  display: block;
+  margin-bottom: 4px;
+}
